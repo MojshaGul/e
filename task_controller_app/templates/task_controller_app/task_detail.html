@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="card" style="width: 80rem; height: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{ task.title }}
+                    <span class="badge text-bg-primary">{{ task.get_task_type_display }}</span>
+                    <span class="badge text-bg-danger">{{ task.get_task_priority_display }}</span>
+                </h5>
+                <p class="card-text">{{ task.description }}</p>
+            </div>
+            <div class="btn-group" role="group">
+                <a href="{% url 'task_list' %}" class="btn btn-primary">Back</a>
+                <a href="{% url 'task_update' pk=task.id %}" class="btn btn-warning">Update</a>
+                <a href="{% url 'task_delete' pk=task.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

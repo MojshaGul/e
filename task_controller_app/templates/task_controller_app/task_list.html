@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container-fluid">
+        <a href="{% url 'task_create' %}" class="btn btn-primary">Create new</a>
+        <form method="GET">
+            {{ form.as_p }}
+            <button type="submit">Search!</button>
+        </form>
+        <div class="row row-cols-auto justify-content-center">
+            {% for task in tasks %}
+                <div class="col">
+                    <div class="card mt-4 mb-4" style="width: 32rem; height: 16rem;">
+                        <div class="container card-body">
+                            <h5 class="card-title">
+                                {{ task.title }}
+                                <span class="badge text-bg-primary">{{ task.get_task_type_display }}</span>
+                                <span class="badge text-bg-danger">{{ task.get_task_priority_display }}</span>
+                            </h5>
+                            <p class="card-text">{{ task.description }}</p>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <a href="{% url 'task_detail' task.id %}" class="btn btn-primary">View</a>
+                            <a href="{% url 'task_complete' task.id %}" class="btn btn-success">Done</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

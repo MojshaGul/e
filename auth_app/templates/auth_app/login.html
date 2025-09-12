@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container-fluid">
+    <h2>login to account</h2>
+    <form method="post" action="{% url 'login_page' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">login</button>
+    </form>
+</main>
+{% endblock %}
