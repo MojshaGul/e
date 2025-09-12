@@ -72,3 +72,7 @@ class TaskCompleteView(CheckIsOwnerMixin, LoginRequiredMixin, View):
     def get_task(self): 
         task_id = self.kwargs.get('pk') 
         return get_object_or_404(Task, pk=task_id)
+    
+class TaskAboutView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "task_controller_app/information.html")

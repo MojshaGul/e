@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from task_controller_app.views import TaskListView, TaskCreateView, TaskDetailView, TaskDeleteView, TaskUpdateView, TaskCompleteView
+from task_controller_app.views import TaskListView, TaskCreateView, TaskDetailView, TaskDeleteView, TaskUpdateView, TaskCompleteView, TaskAboutView
 
 urlpatterns = [
     path('', TaskListView.as_view(), name='task_list'),
@@ -8,5 +8,6 @@ urlpatterns = [
     path('task/create/', TaskCreateView.as_view(), name='task_create'),
     path('task/delete/<int:pk>', TaskDeleteView.as_view(), name='task_delete'),
     path('task/update/<int:pk>', TaskUpdateView.as_view(), name='task_update'),
-    path('task/complete/<int:pk>', TaskCompleteView.as_view(), name='task_complete')
+    path('task/complete/<int:pk>', TaskCompleteView.as_view(), name='task_complete'),
+    path('task/about', TaskAboutView.as_view(), name='information')
 ]
