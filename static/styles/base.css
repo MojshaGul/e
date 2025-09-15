@@ -15,3 +15,36 @@ main {
 footer {
     background-color: #f8f9fa;
 }
+
+.animated-nav-link:hover {
+        background-color: #45a049;
+}
+.nav-link {
+      padding: 15px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #007bff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+.post{
+    padding: 15px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #007bff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.animated-post:hover{
+    background-color: #45a049;
+}
